@@ -2,8 +2,8 @@
 void xuat (int t);
 void nhap (int A[], int &n);
 int kiemTra (int A[], int n);
-int soLe (int n);
-int tsole (int t);
+int soGanh (int n);
+int tsoGanh (int t);
 int main ()
 {
 	int A[100], n;
@@ -22,26 +22,26 @@ int kiemTra (int A[], int n)
 {
 	for (int i=0; i<n; i++)
 	{
-		if (soLe (A[i]))
+		if (soGanh (A[i]))
 				return A[i];
 	}
 	return -1;
 }
-int tsole (int t)
+int tsoGanh (int t)
 {
-	int a;
+	int s=0;
 	while (t>0)
 	{
-		a=t %10;
+		int a=t %10;
 		t=t/10;
-	
+		s= s*10 +a;
 	}
-	return a;
+	return s;
 
 }
-int soLe (int a)
+int soGanh (int t)
 {
-	if (tsole (a)%2!=0)
+	if (t== tsoGanh (t))
 		return 1;
 	else
 		return 0;
